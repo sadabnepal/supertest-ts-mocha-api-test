@@ -1,7 +1,7 @@
 import { expect } from 'chai';
-import { validate } from "jsonschema";
 import { performance } from 'perf_hooks';
 import { postCall } from 'src/helper/apicall';
+import { checkResponseSchema } from 'src/helper/schemavalidator';
 import users from "src/resources/testdata.json";
 import Userschema from 'src/resources/userschema.json';
 import { endpoint } from 'src/services/endpoints';
@@ -18,10 +18,9 @@ describe('Test ReqRes APIs', () => {
             expect(response.statusCode).to.equal(201);
             expect(response.type).to.equal("application/json");
 
-            const responseBody: UserResponseType = response.body
-            expect(validate(responseBody, Userschema).valid).to.be.true;
-            expect(validate(responseBody, Userschema).errors.length).to.equal(0);
+            checkResponseSchema(response, Userschema);
 
+            const responseBody: UserResponseType = response.body;
             const { name, job, id, createdAt } = responseBody;
             expect(name).equal(user.name);
             expect(job).equal(user.job);
