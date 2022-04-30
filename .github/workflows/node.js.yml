@@ -37,7 +37,7 @@ jobs:
         cache-to: type=local,dest=/tmp/.buildx-cache
 
     - name: Check docker image
-      run: docker image -a
+      run: docker images -a
     
     - name: Run api test in docker
       run: docker run api-node-image:latest
