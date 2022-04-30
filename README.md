@@ -41,6 +41,7 @@ Path: https://github.com/sadabnepal/APITestFrameworkMochaTS/actions
     - JSON file as data source
     - Use of functional programming
     - Docker ang Github integration
+    - Enhanced import statements
 
 #### Tech stacks:
 [![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)
