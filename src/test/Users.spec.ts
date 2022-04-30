@@ -20,6 +20,12 @@ describe('Test ReqRes APIs', () => {
             const responseBody: UserResponseType = response.body
             expect(validate(responseBody, Userschema).valid).to.be.true;
             expect(validate(responseBody, Userschema).errors.length).to.equal(0);
+
+            const { name, job, id, createdAt } = responseBody;
+            expect(name).equal(user.name);
+            expect(job).equal(user.job);
+            expect(id).not.empty;
+            expect(createdAt).not.empty;
         })
     })
 
