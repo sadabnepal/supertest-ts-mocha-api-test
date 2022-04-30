@@ -5,7 +5,7 @@ name: API CLI
 
 on:
   push:
-    branches: [ ft_docker ]
+    branches: [ master ]
 
 jobs:
   build:
