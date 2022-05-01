@@ -35,9 +35,6 @@ jobs:
         tags: api-node-image:latest
         cache-from: type=local,src=/tmp/.buildx-cache
         cache-to: type=local,dest=/tmp/.buildx-cache
-
-    - name: Check docker image
-      run: docker images -a
     
     - name: Run api test in docker
       run: docker run --volume "${pwd}"/report:/app/report/ api-node-image:latest
@@ -47,6 +44,9 @@ jobs:
     #   with:
     #     name: MochawesomeReport
     #     path: /report
+
+    - name: List folder
+      run: ls -lrt
 
     - name: Deploy report to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
