@@ -37,16 +37,13 @@ jobs:
         cache-to: type=local,dest=/tmp/.buildx-cache
     
     - name: Run api test in docker
-      run: docker run api-node-image:latest
+      run: docker run api-node-image:latest && ls -lrt
 
     # - name: Upload report artifact
     #   uses: actions/upload-artifact@v2
     #   with:
     #     name: MochawesomeReport
     #     path: /report
-
-    - name: List folder
-      run: ls -lrt
 
     - name: Deploy report to GitHub Page
       uses: peaceiris/actions-gh-pages@v3
