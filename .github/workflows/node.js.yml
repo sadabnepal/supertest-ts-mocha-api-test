@@ -37,7 +37,7 @@ jobs:
         cache-to: type=local,dest=/tmp/.buildx-cache
     
     - name: Run api test in docker
-      run: docker run --volume "${pwd}"/report:/app/report/ api-node-image:latest
+      run: docker run api-node-image:latest
 
     # - name: Upload report artifact
     #   uses: actions/upload-artifact@v2
