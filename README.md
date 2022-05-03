@@ -36,7 +36,7 @@ Path: https://github.com/sadabnepal/APITestFrameworkMochaTS/actions
 Docker Run:
 > Setup [docker](https://docs.docker.com/get-docker/) in your local machine to run test in dockerize environment
 ```
-docker build -t node-api-image . [ you can given any name of you choice ]
+docker build -t node-api-image . [ you can given any name of your choice ]
 docker run node-api-image:latest [ to run test inside docker ]
 ```
 
@@ -47,7 +47,7 @@ docker run node-api-image:latest [ to run test inside docker ]
     - Schema validator
     - JSON file as data source
     - Use of functional programming
-    - Docker ang Github integration
+    - Docker and Github integration
     - Enhanced import statements
 
 #### Tech stacks:
@@ -59,7 +59,7 @@ docker run node-api-image:latest [ to run test inside docker ]
 
 #### Folder Structure:
 ```
-├───.github [ github action itegeration ]
+├───.github [ github action integration ]
 ├───.vscode [ auto code and import formatter ]
 ├───src
 |     ├───config [ basic configuration]
