@@ -33,6 +33,13 @@ GitHub Actions:
 Path: https://github.com/sadabnepal/APITestFrameworkMochaTS/actions
 ```
 
+Docker Run:
+> Setup [docker](https://docs.docker.com/get-docker/) in your local machine to run test in dockerize environment
+```
+docker build -t node-api-image . [ you can given any name of you choice ]
+docker run node-api-image:latest [ to run test inside docker ]
+```
+
 #### Features:
     - Mocha Framework with Mochawesome report integration
     - Custom types for better code intellisense
