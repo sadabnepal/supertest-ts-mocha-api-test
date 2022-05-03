@@ -24,8 +24,8 @@ describe('Test ReqRes APIs', () => {
             const { name, job, id, createdAt } = responseBody;
             expect(name).equal(user.name);
             expect(job).equal(user.job);
-            expect(id).not.empty;
-            expect(createdAt).not.empty;
+            expect(id).is.not.empty;
+            expect(createdAt).is.not.empty;
         })
     })
 
