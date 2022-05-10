@@ -49,6 +49,7 @@ docker run node-api-image:latest [ to run test inside docker ]
     - JSON file as data source
     - Docker and Github integration
     - Enhanced import statements
+    - Report response logger
 
 #### Tech stacks:
 [![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)
@@ -77,4 +78,4 @@ docker run node-api-image:latest [ to run test inside docker ]
 ```
 
 #### Sample Report
-![SampleReport](https://user-images.githubusercontent.com/65847528/166101585-1f2aaacd-3303-4d22-8de4-489ac2ba9564.png)
+![SamplReport](https://user-images.githubusercontent.com/65847528/167574833-05db8fe3-e2b0-4d97-9cac-16f6f1c6c0c2.png)
