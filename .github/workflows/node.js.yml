@@ -45,7 +45,7 @@ jobs:
         path: /report
 
     - name: Deploy report to GitHub Page
-      uses: peaceiris/actions-gh-pages@v2
+      uses: peaceiris/actions-gh-pages@v3
       with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           PUBLISH_BRANCH: gh-pages
