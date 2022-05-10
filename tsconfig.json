@@ -15,6 +15,9 @@
             ],
             "@Types/*": [
                 "./src/types/*"
+            ],
+            "@Schema/*": [
+                "./src/schema/*"
             ]
         }
     }

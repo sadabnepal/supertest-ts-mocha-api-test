@@ -44,9 +44,8 @@ docker run node-api-image:latest [ to run test inside docker ]
     - Mocha Framework with Mochawesome report integration
     - Custom types for better code intellisense
     - Service as enum for better input control
-    - Schema validator
+    - Schema validation
     - JSON file as data source
-    - Use of functional programming
     - Docker and Github integration
     - Enhanced import statements
 

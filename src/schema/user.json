@@ -1,5 +1,12 @@
 {
+    "title": "user schema",
     "type": "object",
+    "required": [
+        "name",
+        "job",
+        "id",
+        "createdAt"
+    ],
     "properties": {
         "name": {
             "type": "string"
@@ -13,11 +20,5 @@
         "createdAt": {
             "type": "string"
         }
-    },
-    "required": [
-        "name",
-        "job",
-        "id",
-        "createdAt"
-    ]
+    }
 }
