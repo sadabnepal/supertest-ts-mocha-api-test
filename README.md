@@ -45,6 +45,7 @@ docker run node-api-image:latest [ to run test inside docker ]
     - Custom types for better code intellisense
     - Service as enum for better input control
     - Schema validation
+    - Multi environment support  
     - JSON file as data source
     - Docker and Github integration
     - Enhanced import statements

@@ -1,3 +1,3 @@
 import supertest from 'supertest';
 
-export const request = supertest("https://reqres.in/api/");
+export const request = supertest(process.env.BASEURI || "https://reqres.in/api/");
