@@ -1,14 +1,16 @@
-import { request } from "src/config/supertest";
-import { endpoint } from "src/services/endpoints";
+import { request } from "@Config/supertest";
+import { logResponseToReport } from "@Helper/logger";
+import { GetApiType, PostApiType } from "@Types/http";
 import { Response } from "supertest";
 
-export const postCall = async (service: endpoint, payload: object, headers?: object): Promise<Response> => {
-    if (headers) return request.post(service).set(headers);
-    return request.post(service).send(payload);
+export const httpPostCall = async (post: PostApiType): Promise<Response> => {
+    let response = await request.post(post.service).set(post.headers ? post.headers : {}).send(post.payload);
+    logResponseToReport(post.context, response);
+    return response;
 }
 
-export const getCall = async (service: endpoint, payload?: object, headers?: object): Promise<Response> => {
-    if (payload && headers) return request.get(service).set(headers).send(payload);
-    else if (payload) return request.get(service).send(payload);
-    else return request.get(service);
+export const httpGetCall = async (get: GetApiType): Promise<Response> => {
+    let response = await request.get(get.service).set(get.headers ? get.headers : {}).send(get.payload ? get.payload : {});
+    logResponseToReport(get.context, response);
+    return response;
 }
