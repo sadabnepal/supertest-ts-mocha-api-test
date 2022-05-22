@@ -4,6 +4,9 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "paths": {
+            "@Config/*": [
+                "./src/config/*"
+            ],
             "@Resources/*": [
                 "./src/resources/*"
             ],
@@ -18,6 +21,12 @@
             ],
             "@Schema/*": [
                 "./src/schema/*"
+            ],
+            "@Validation/*": [
+                "./src/validations/*"
+            ],
+            "@Static/*": [
+                "./src/static/*"
             ]
         }
     }
