@@ -29,7 +29,6 @@ describe('Test ReqRes APIs', () => {
                 .toEqual(job, user.job)
                 .isNotEmpty(id)
                 .isNotEmpty(createdAt);
-
         })
     })
 
