@@ -5,15 +5,8 @@ use(require('chai-json-schema'));
 
 export default class ResponseAssert {
 
-    response: Response;
-
-    constructor(response: Response) {
+    constructor(public response: Response) {
         this.response = response;
-    }
-
-    assertThat(response: Response) {
-        this.response = response;
-        return this;
     }
 
     timeIsLessThan(start: any, expectedTime: number) {
