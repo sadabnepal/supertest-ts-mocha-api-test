@@ -5,7 +5,7 @@ use(require('chai-json-schema'));
 
 export default class ResponseAssert {
 
-    constructor(public response: Response) {
+    constructor(private response: Response) {
         this.response = response;
     }
 
