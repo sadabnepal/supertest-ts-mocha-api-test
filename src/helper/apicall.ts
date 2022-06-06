@@ -5,19 +5,19 @@ import { Response } from "supertest";
 
 const setObjectOrEmptyIfUndefined = (data?: object) => data ? data : {};
 
-export const httpGetCall = async (get: GetApiType): Promise<Response> => {
+export const httpGetCall = async (options: GetApiType): Promise<Response> => {
     let response = await request
-        .get(get.service)
-        .set(setObjectOrEmptyIfUndefined(get.headers))
-    if (get.context) logResponseToReport(get.context, response);
+        .get(options.service)
+        .set(setObjectOrEmptyIfUndefined(options.headers))
+    if (options.context) logResponseToReport(options.context, response);
     return response;
 }
 
-export const httpPostCall = async (post: PostApiType): Promise<Response> => {
+export const httpPostCall = async (options: PostApiType): Promise<Response> => {
     let response = await request
-        .post(post.service)
-        .set(setObjectOrEmptyIfUndefined(post.headers))
-        .send(post.payload);
-    if (post.context) logResponseToReport(post.context, response);
+        .post(options.service)
+        .set(setObjectOrEmptyIfUndefined(options.headers))
+        .send(options.payload);
+    if (options.context) logResponseToReport(options.context, response);
     return response;
 }
