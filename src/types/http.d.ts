@@ -2,6 +2,7 @@ import { endpoint } from "@Services/endpoints";
 
 type ApiOptions = {
     service: endpoint,
+    query?: object,
     headers?: object,
     context?: Mocha.Context
 };
