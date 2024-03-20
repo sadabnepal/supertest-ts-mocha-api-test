@@ -11,7 +11,6 @@ use(require('chai-json-schema'));
 describe('Test ReqRes APIs', () => {
 
     it('should validate create user 1', async function () {
-
         const userData: UserPayloadType = testData.user1;
 
         const startTime = performanceTime()
@@ -30,7 +29,6 @@ describe('Test ReqRes APIs', () => {
     })
 
     it('should validate create user 2', async function () {
-
         const userData: UserPayloadType = testData.user2;
 
         const startTime = performanceTime()
