@@ -1,10 +1,11 @@
 import addContext from 'mochawesome/addContext';
-import supertest from "supertest";
+import { Response } from "supertest";
 
-const formatResponse = (response: supertest.Response) => {
-    return `Response: ${JSON.stringify(response.body, null, 4)}`;
+export const logRequestToReport = (context: Mocha.Context, request: object) => {
+    addContext(context, `Request Payload: ${JSON.stringify(request, null, 4)}`)
 }
 
-export const logResponseToReport = (context: Mocha.Context, response: supertest.Response) => {
-    addContext(context, formatResponse(response))
+
+export const logResponseToReport = (context: Mocha.Context, response: Response) => {
+    addContext(context, `Response: ${JSON.stringify(response.body, null, 4)}`)
 }

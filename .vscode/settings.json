@@ -2,7 +2,7 @@
     "editor.formatOnSave": true,
     "typescript.updateImportsOnFileMove.enabled": "always",
     "editor.codeActionsOnSave": {
-        "source.fixAll": true,
-        "source.organizeImports": true
+        "source.fixAll": "always",
+        "source.organizeImports": "always"
     }
 }

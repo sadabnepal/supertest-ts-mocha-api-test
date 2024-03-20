@@ -1,5 +1,5 @@
 import { request } from "@Config/supertest";
-import { logResponseToReport } from "@Helper/logger";
+import { logRequestToReport, logResponseToReport } from "@Helper/logger";
 import { GetApiType, PostApiType } from "@Types/http";
 import { Response } from "supertest";
 
@@ -13,6 +13,7 @@ export const httpGetCall = async (options: GetApiType): Promise<Response> => {
 }
 
 export const httpPostCall = async (options: PostApiType): Promise<Response> => {
+    if (options.context) logRequestToReport(options.context, options.payload)
     let response = await request
         .post(options.service)
         .query(options.query || {})

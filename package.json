@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --timeout 5000 --reporter mochawesome --reporter-options o=report  --reporter-options charts=true  --reporter-options code=false -r tsconfig-paths/register -r ts-node/register src/test/*.ts"
+    "test": "mocha"
   },
   "keywords": [
     "API",
