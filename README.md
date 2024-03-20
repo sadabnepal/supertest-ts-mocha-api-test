@@ -8,8 +8,8 @@ Boilerplate API test framework using Mocha, SuperTest and TypeScript.
 #### Getting Started:
 Clone Repository
 ```bash
-1. git https://github.com/sadabnepal/APITestFrameworkMochaTS.git
-2. Navigate to APITestFrameworkMochaTS
+git https://github.com/sadabnepal/supertest-ts-mocha-api-test.git
+cd supertest-ts-mocha-api-test
 ```
 
 Install the dependencies
@@ -23,7 +23,7 @@ npm test
 
 Report Path:
 ```
-path: <PROJECT_FOLDER>/report/mochawesome.html
+path: <PROJECT_FOLDER>/report/index.html
 ```
 
 GitHub Actions:
@@ -49,7 +49,7 @@ docker run node-api-image:latest [ to run test inside docker ]
     - JSON file as data source
     - Docker and Github integration
     - Enhanced import statements
-    - Report response logger
+    - Request and response report logger
 
 #### Tech stacks:
 [![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)
@@ -64,12 +64,14 @@ docker run node-api-image:latest [ to run test inside docker ]
 ├───.vscode [ auto code and import formatter ]
 ├───src
 |     ├───config [ basic configuration]
-|     ├───helper [ resuable components ]
+|     ├───helper [ reusable components ]
 |     ├───resources [ data and schema files ]
 |     ├───services [ endpoint and header files ]
+|     ├───schema [ endpoint and header files ]
 |     ├───test
 |     └───types
 ├───.gitignore
+├───.mocharc.js
 ├───Dockerfile [ build docker image ]
 ├───package-lock.json
 ├───package.json
@@ -78,4 +80,4 @@ docker run node-api-image:latest [ to run test inside docker ]
 ```
 
 #### Sample Report
-![SamplReport](https://user-images.githubusercontent.com/65847528/167574833-05db8fe3-e2b0-4d97-9cac-16f6f1c6c0c2.png)
+![SampleReport](https://user-images.githubusercontent.com/65847528/167574833-05db8fe3-e2b0-4d97-9cac-16f6f1c6c0c2.png)
