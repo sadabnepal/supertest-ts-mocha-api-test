@@ -7,7 +7,7 @@
     "test": "mocha",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepare": "husky"
+    "postinstall": "husky"
   },
   "keywords": [
     "API",
