@@ -5,11 +5,11 @@
         "esModuleInterop": true,
         "resolveJsonModule": true,
         "paths": {
-            "@Config/*": [
-                "./src/config/*"
+            "@ENV/*": [
+                "./src/env/*"
             ],
             "@Resources/*": [
-                "./src/resources/*"
+                "./src/data/*"
             ],
             "@Helper/*": [
                 "./src/helper/*"
@@ -30,5 +30,9 @@
                 "./src/static/*"
             ]
         }
-    }
+    },
+    "include": [
+        ".eslintrc.js",
+        "src/**/*.ts"
+    ]
 }

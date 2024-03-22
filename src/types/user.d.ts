@@ -1,4 +1,4 @@
-export type UserPayloadType = {
+export interface UserPayloadType {
     name: string,
     job: string
 }
