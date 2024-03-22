@@ -51,6 +51,7 @@ docker run node-api-image:latest [ to run test inside docker ]
     - Enhanced import statements
     - Request and response report logger
     - Lint for better code quality
+    - Husky for auto lint check before code commit
 
 #### Tech stacks:
 [![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)
