@@ -25,7 +25,7 @@ describe('Test ReqRes APIs', () => {
         expect(response.body).to.be.jsonSchema(userSchema);
         expect(name).equal(userData.name);
         expect(job).equal(userData.job);
-        expect(id).is.not.empty;
+        expect(id).is.not.empty
         expect(createdAt).is.not.empty;
     });
 
