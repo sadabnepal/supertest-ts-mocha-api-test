@@ -1,7 +1,8 @@
 import { endpoint } from '@Services/endpoints';
 
 interface ApiOptions {
-    endpoint: endpoint,
+    baseUrl: string,
+    endpoint: endpoint | string,
     headers?: Record<string, string>
     context?: Mocha.Context
 }
@@ -9,3 +10,7 @@ interface ApiOptions {
 export type GetApiType = ApiOptions & { query?: object };
 
 export type PostApiType = ApiOptions & { payload: object };
+
+export type DeleteApiType = ApiOptions;
+
+export type PutApiType = ApiOptions & { payload: object }

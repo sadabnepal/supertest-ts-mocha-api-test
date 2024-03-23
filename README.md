@@ -7,6 +7,7 @@ Boilerplate API test framework using Mocha, SuperTest and TypeScript.
 
 #### Getting Started:
 Clone Repository
+
 ```bash
 git https://github.com/sadabnepal/supertest-ts-mocha-api-test.git
 cd supertest-ts-mocha-api-test
@@ -16,36 +17,46 @@ Install the dependencies
 ```bash
 npm install
 ```
+
+Setup user token
+```bash
+- Open the URL 'https://gorest.co.in//
+- Login or Sign
+- Click on Login user drop down --> Access Token
+- Create .env file and add actual token, refer .env.example file
+```
+
 Run tests
 ```bash
 npm test
 ```
 
 Report Path:
-```
+```bash
 path: <PROJECT_FOLDER>/report/index.html
 ```
 
 GitHub Actions:
 > With Each push on master branch all test will be executed using github action and docker image.
 > Post execution report will be copied to github artifact which can be later downloaded.
-```
+```bash
 Path: https://github.com/sadabnepal/APITestFrameworkMochaTS/actions
 ```
 
 Docker Run:
 > Setup [docker](https://docs.docker.com/get-docker/) in your local machine to run test in dockerize environment
-```
+```bash
 docker build -t node-api-image . [ you can given any name of your choice ]
 docker run node-api-image:latest [ to run test inside docker ]
 ```
 
 #### Features:
-    - Mocha Framework with Mochawesome report integration
+    - Supertest library
+    - Mocha framework with mochawesome report integration
     - Custom types for better code intellisense
     - Service as enum for better input control
     - Schema validation
-    - Multi environment support  
+    - Multi environment support 
     - JSON file as data source
     - Docker and Github integration
     - Enhanced import statements
@@ -64,20 +75,24 @@ docker run node-api-image:latest [ to run test inside docker ]
 [![Husky](https://img.shields.io/badge/Husky-dbc1ac?logo=gitlab&logoColor=black)]([https://www.docker.com/](https://typicode.github.io/husky/))
 
 #### Folder Structure:
-```
-├───.github [ github action integration ]
-├───.vscode [ auto code and import formatter ]
+```bash
+├───.github
+├───.husky
+├───.vscode
 ├───src
-|     ├───config [ basic configuration]
-|     ├───helper [ reusable components ]
-|     ├───resources [ data and schema files ]
-|     ├───services [ endpoint and header files ]
-|     ├───schema [ endpoint and header files ]
+|     ├───data
+|     ├───env
+|     ├───helper
+|     ├───schema
+|     ├───services
+|     ├───static
 |     ├───test
 |     └───types
+├───.env.example
+├───.eslintrc.js
 ├───.gitignore
 ├───.mocharc.js
-├───Dockerfile [ build docker image ]
+├───Dockerfile
 ├───package-lock.json
 ├───package.json
 ├───README.md

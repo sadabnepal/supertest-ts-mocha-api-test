@@ -1,5 +1,6 @@
-import { httpPostCall } from '@Helper/httpCalls';
-import { performanceTime } from '@Helper/utils';
+import { REQ_RES_BASEURL } from '@ENV/manager';
+import { httpPostRequest } from '@Helper/httpCalls';
+import { performanceTime } from '@Helper/miscellaneous';
 import testData from '@Resources/testdata.json';
 import userSchema from '@Schema/user.json';
 import { endpoint } from '@Services/endpoints';
@@ -9,13 +10,13 @@ import { expect, use } from 'chai';
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 use(require('chai-json-schema'));
 
-describe('Test ReqRes APIs', () => {
+describe('Test req res APIs', function () {
 
     it('should validate create user 1', async function () {
         const userData: UserPayloadType = testData.user1;
 
         const startTime = performanceTime();
-        const response = await httpPostCall({ endpoint: endpoint.user, payload: userData, context: this });
+        const response = await httpPostRequest({ baseUrl: REQ_RES_BASEURL, endpoint: endpoint.user, payload: userData, context: this });
 
         const { name, job, id, createdAt }: UserResponseType = response.body;
 
@@ -33,7 +34,7 @@ describe('Test ReqRes APIs', () => {
         const userData: UserPayloadType = testData.user2;
 
         const startTime = performanceTime();
-        const response = await httpPostCall({ endpoint: endpoint.user, payload: userData, context: this });
+        const response = await httpPostRequest({ baseUrl: REQ_RES_BASEURL, endpoint: endpoint.user, payload: userData, context: this });
 
         const { name, job, id, createdAt }: UserResponseType = response.body;
 

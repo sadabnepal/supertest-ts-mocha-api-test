@@ -27,7 +27,7 @@ module.exports = {
     retries: 1,
     slow: '75',
     sort: false,
-    spec: ['src/test/*.ts'],
+    spec: ['src/test/**/*.ts'],
     timeout: 5 * 1000,
     'trace-warnings': true,
     ui: 'bdd'

@@ -1,3 +1,4 @@
 export enum endpoint {
-    user = '/users'
+    user = '/users',
+    posts = '/posts'
 }
