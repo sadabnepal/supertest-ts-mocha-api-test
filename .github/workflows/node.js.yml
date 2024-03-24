@@ -8,7 +8,7 @@ on:
     branches: [ main ]
 
 jobs:
-  APIAutomationBuild:
+  Regression:
 
     runs-on: ubuntu-latest
 
@@ -20,7 +20,7 @@ jobs:
       run: docker build . --file Dockerfile --tag api-node-image:latest
     
     - name: Run api test in docker
-      run: docker run --volume "${pwd}"/report:/app/report/ api-node-image:latest
+      run: docker run --env USER_TOKEN=${{ secrets.GO_RES_USER_TOKEN }} --volume "${pwd}"/report:/app/report/ api-node-image:latest
 
     - name: Upload report artifact
       uses: actions/upload-artifact@v3
