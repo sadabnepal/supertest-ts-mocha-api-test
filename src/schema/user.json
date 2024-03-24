@@ -1,23 +1,27 @@
 {
-    "title": "user schema",
+    "title": "users schema",
     "type": "object",
     "required": [
-        "name",
-        "job",
         "id",
-        "createdAt"
+        "name",
+        "email",
+        "gender",
+        "status"
     ],
     "properties": {
+        "id": {
+            "type": "number"
+        },
         "name": {
             "type": "string"
         },
-        "job": {
+        "email": {
             "type": "string"
         },
-        "id": {
+        "gender": {
             "type": "string"
         },
-        "createdAt": {
+        "status": {
             "type": "string"
         }
     }

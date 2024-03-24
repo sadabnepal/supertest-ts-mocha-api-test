@@ -1,12 +1,11 @@
 module.exports = {
-    color: true,
+    spec: ['src/test/**/*.ts'],
+    package: './package.json',
     extension: ['.ts'],
-    'fail-zero': true,
+    timeout: 5 * 1000,
+    color: true,
     grep: '',
     ignore: [''],
-    package: './package.json',
-    parallel: false,
-    recursive: false,
     reporter: 'mochawesome',
     'reporter-option': [
         'reportDir=report',
@@ -24,11 +23,10 @@ module.exports = {
         'showHooks=failed'
     ],
     require: ['ts-node/register, tsconfig-paths/register'],
-    retries: 1,
+    parallel: false,
+    recursive: false,
+    retries: 0,
     slow: '75',
     sort: false,
-    spec: ['src/test/**/*.ts'],
-    timeout: 5 * 1000,
-    'trace-warnings': true,
     ui: 'bdd'
 };

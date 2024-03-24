@@ -2,21 +2,21 @@
 import { faker } from '@faker-js/faker';
 
 export const createUserPayload = {
-    email: faker.internet.email(),
-    name: faker.name.firstName(),
-    gender: 'male',
+    email: faker.internet.email({ provider: 'test.com' }),
+    name: faker.person.firstName(),
+    gender: faker.person.sex(),
     status: 'active'
 };
 
 export const randomUserPayload = {
-    email: faker.internet.email(),
-    name: faker.name.firstName(),
-    gender: 'male',
+    email: faker.internet.email({ provider: 'sample.com' }),
+    name: faker.person.firstName(),
+    gender: faker.person.sex(),
     status: 'active'
 };
 
 export const updateUserPayload = {
-    name: faker.name.firstName(),
+    name: faker.person.firstName(),
     email: faker.internet.email(),
 };
 

@@ -48,17 +48,19 @@ Run in Github Actions
 
 #### Features:
     - Supertest library
-    - Mocha framework with mochawesome report integration
+    - Mocha framework to organize tests
+    - Mochawesome report integration with logs
     - Custom types for better code intellisense
     - Service as enum for better input control
     - Schema validation
     - Multi environment support 
-    - JSON file as data source
     - Docker and Github integration
     - Enhanced import statements
     - Request and response report logger
     - Lint for better code quality
     - Husky for auto lint check before code commit
+    - Manage secretes using dotenv library
+    - Runtime dynamic test data generation using faker js library
 
 #### Tech stacks:
 [![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)

@@ -5,23 +5,25 @@ import { invalidPostPayload, randomUserPayload, validPostPayload } from '@Resour
 import { endpoint } from '@Services/endpoints';
 import { expect } from 'chai';
 
-describe('Test go rest posts APIs', function () {
+describe('Test go rest /POSTS', function () {
 
     let userID: number;
 
     before('setup user id', async function () {
         const response = await httpPostRequest({
             baseUrl: GO_RES_BASEURL,
-            endpoint: endpoint.user,
+            endpoint: endpoint.users,
             payload: randomUserPayload,
             headers: GO_REST_TOKEN
         });
+
+        expect(response.body.code).to.be.eq(201);
         userID = response.body.data.id;
     });
 
-    describe('happy path', function () {
+    describe('positive scenarios', function () {
         let postID: number;
-        it('should validate /POSTS', async function () {
+        it('should validate create posts', async function () {
             const response = await httpPostRequest({
                 baseUrl: GO_RES_BASEURL,
                 endpoint: endpoint.posts,
@@ -30,24 +32,25 @@ describe('Test go rest posts APIs', function () {
                 context: this
             });
 
-            postID = response.body.data.id;
             expect(response.body.code).to.be.eq(201);
+            postID = response.body.data.id;
         });
 
-        it('should validate /POSTS/:id', async function () {
+        it('should validate get post by id', async function () {
             const response = await httpGetRequest({
                 baseUrl: GO_RES_BASEURL,
                 endpoint: `${endpoint.posts}/${postID}`,
+                headers: GO_REST_TOKEN,
                 context: this
             });
 
-            expect(response.statusCode).to.equal(200);
+            expect(response.body.code).to.be.eq(200);
         });
     });
 
     describe('negative scenarios', function () {
 
-        it('should validate 401 Error code', async function () {
+        it('should validate 401 error code when no token is provided', async function () {
             const response = await httpPostRequest({
                 baseUrl: GO_RES_BASEURL,
                 endpoint: endpoint.posts,
@@ -60,7 +63,7 @@ describe('Test go rest posts APIs', function () {
             expect(response.body.data.message).to.be.eq('Authentication failed');
         });
 
-        it('should validate 401 Error code with invalid token', async function () {
+        it('should validate 401 error code when invalid token is provided', async function () {
             const response = await httpPostRequest({
                 baseUrl: GO_RES_BASEURL,
                 endpoint: endpoint.posts,
@@ -74,7 +77,7 @@ describe('Test go rest posts APIs', function () {
             expect(response.body.data.message).to.be.eq('Invalid token');
         });
 
-        it('should validate 422 Error code', async function () {
+        it('should validate 422 error code when invalid payload is provided', async function () {
             const response = await httpPostRequest({
                 baseUrl: GO_RES_BASEURL,
                 endpoint: endpoint.posts,
