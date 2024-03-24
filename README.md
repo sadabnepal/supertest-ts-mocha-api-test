@@ -33,14 +33,7 @@ npm test
 
 Report Path:
 ```bash
-path: <PROJECT_FOLDER>/report/index.html
-```
-
-GitHub Actions:
-> With Each push on master branch all test will be executed using github action and docker image.
-> Post execution report will be copied to github artifact which can be later downloaded.
-```bash
-Path: https://github.com/sadabnepal/APITestFrameworkMochaTS/actions
+path: <PROJECT_FOLDER>/report/index_yyyy\'T\'HH-MM-ss.html
 ```
 
 Docker Run:
@@ -49,6 +42,9 @@ Docker Run:
 docker build -t node-api-image . [ you can given any name of your choice ]
 docker run node-api-image:latest [ to run test inside docker ]
 ```
+
+Run in Github Actions
+> Currently test is setup to execute in github action on push event. You need to [create github secrete]((https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)) for `GO_RES_USER_TOKEN` with value generated in `Setup user token` step.
 
 #### Features:
     - Supertest library
