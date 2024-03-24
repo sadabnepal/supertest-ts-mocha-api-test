@@ -20,7 +20,7 @@ npm install
 
 Setup user token
 ```bash
-- Open the URL 'https://gorest.co.in//
+- Open the URL 'https://gorest.co.in/'
 - Login or Sign
 - Click on Login user drop down --> Access Token
 - Create .env file and add actual token, refer .env.example file
