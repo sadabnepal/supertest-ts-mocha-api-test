@@ -10,28 +10,28 @@ on:
 jobs:
   Regression:
 
-    runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      pages: write
-      id-token: write
+    # runs-on: ubuntu-latest
+    # permissions:
+    #   contents: read
+    #   pages: write
+    #   id-token: write
 
-    steps:
-    - name: Checkout git project
-      uses: actions/checkout@v3
+    # steps:
+    # - name: Checkout git project
+    #   uses: actions/checkout@v3
 
-    - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag api-node-image:latest
+    # - name: Build the Docker image
+    #   run: docker build . --file Dockerfile --tag api-node-image:latest
     
-    - name: Run api test in docker
-      run: docker run --env USER_TOKEN=${{ secrets.GO_RES_USER_TOKEN }} --volume "${pwd}"/report:/app/report/ api-node-image:latest
+    # - name: Run api test in docker
+    #   run: docker run --env USER_TOKEN=${{ secrets.GO_RES_USER_TOKEN }} --volume "${pwd}"/report:/app/report/ api-node-image:latest
 
-    - name: Upload report artifact
-      uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: MochawesomeReport
-        path: /report
+    # - name: Upload report artifact
+    #   uses: actions/upload-artifact@v3
+    #   if: always()
+    #   with:
+    #     name: MochawesomeReport
+    #     path: /report
 
     # - name: Configure GitHub Pages
     #   uses: actions/configure-pages@v4.0.0
@@ -45,7 +45,19 @@ jobs:
     # - name: Deploy to GitHub Pages
     #   id: deployment
     #   uses: actions/deploy-pages@v4.0.5    
-    #   if: always() 
+    #   if: always()
+  
+    name: Test API
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout git project
+      uses: actions/checkout@v3
+
+    - name: Install packages
+      run: npm ci
+
+    - name: Run lint and test
+      run: npm run lint&&npm test
     
     - name: Test Report
       uses: phoenix-actions/test-reporting@v8
