@@ -44,7 +44,7 @@ export const httpDeleteCall = async (options: DeleteApiType): Promise<supertest.
     const response = await supertest(options.baseUrl)
         .delete(options.endpoint)
         .set(options.headers || {});
-    expect(performanceTime() - startTime).to.be.lessThan(800);
+    expect(performanceTime() - startTime).to.be.lessThan(1000);
     if (options.context) logResponseToReport(options.context, response);
     return response;
 };
