@@ -33,19 +33,27 @@ jobs:
         name: MochawesomeReport
         path: /report
 
-    - name: Configure GitHub Pages
-      uses: actions/configure-pages@v4.0.0
-      if: always()
-    - name: Upload GitHub Pages Report
-      uses: actions/upload-pages-artifact@v3.0.1
-      if: always()
+    # - name: Configure GitHub Pages
+    #   uses: actions/configure-pages@v4.0.0
+    #   if: always()
+    # - name: Upload GitHub Pages Report
+    #   uses: actions/upload-pages-artifact@v3.0.1
+    #   if: always()
+    #   with:
+    #     path: /report
+    #     retention-days: 30 
+    # - name: Deploy to GitHub Pages
+    #   id: deployment
+    #   uses: actions/deploy-pages@v4.0.5    
+    #   if: always() 
+    
+    - name: Test Report
+      uses: dorny/test-reporter@v1
+      if: success() || failure()
       with:
-        path: /report
-        retention-days: 30 
-    - name: Deploy to GitHub Pages
-      id: deployment
-      uses: actions/deploy-pages@v4.0.5    
-      if: always()    
+        name: API Test Report
+        path: report/index-*.json
+        reporter: mocha-json
     
         
           
