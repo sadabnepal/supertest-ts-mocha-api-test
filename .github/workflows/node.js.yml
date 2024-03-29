@@ -54,9 +54,7 @@ jobs:
       run: npm ci
     
     - name: Run lint and test
-      env :
-        GO_RES_USER_TOKEN : ${{ secrets.GO_RES_USER_TOKEN }}
-      run: npm run lint&&npm test
+      run: npm run lint&&export USER_TOKEN=${{ secrets.GO_RES_USER_TOKEN }}&&npm test
     
     - name: Create Report
       uses: phoenix-actions/test-reporting@v8
