@@ -55,16 +55,16 @@ jobs:
 
     - name: Install packages
       run: npm ci
-
+  
     - name: Run lint and test
-      run: npm run lint&&npm test
+      run: npm run lint&&export GO_RES_USER_TOKEN=${{ secrets.GO_RES_USER_TOKEN }}&&npm test
     
-    - name: Test Report
+    - name: Create Report
       uses: phoenix-actions/test-reporting@v8
       id: test-report
       if: success() || failure()
       with:
-        name: API Test Report
+        name: Test Result
         path: report/index.json
         reporter: mochawesome-json
     
