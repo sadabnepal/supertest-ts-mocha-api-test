@@ -38,7 +38,8 @@ jobs:
       with:
         path: /report
         retention-days: 30 
-    - name: Deploy GitHub Pages site
+    - name: Deploy to GitHub Pages
+      id: deployment
       uses: actions/deploy-pages@v4.0.5    
       if: always()    
     

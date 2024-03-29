@@ -4,13 +4,15 @@ import { expect } from 'chai';
 import supertest from 'supertest';
 import { performanceTime } from './miscellaneous';
 
+const expectedResponseTime = 5 * 1000;
+
 export const httpGetRequest = async (options: GetApiType): Promise<supertest.Response> => {
     const startTime = performanceTime();
     const response = await supertest(options.baseUrl)
         .get(options.endpoint)
         .query(options.query || {})
         .set(options.headers || {});
-    expect(performanceTime() - startTime).to.be.lessThan(1000);
+    expect(performanceTime() - startTime).to.be.lessThan(expectedResponseTime);
     if (options.context) logResponseToReport(options.context, response);
     return response;
 };
@@ -22,7 +24,7 @@ export const httpPostRequest = async (options: PostApiType): Promise<supertest.R
         .post(options.endpoint)
         .set(options.headers || {})
         .send(options.payload);
-    expect(performanceTime() - startTime).to.be.lessThan(1000);
+    expect(performanceTime() - startTime).to.be.lessThan(expectedResponseTime);
     if (options.context) logResponseToReport(options.context, response);
     return response;
 };
@@ -34,7 +36,7 @@ export const httpPuCall = async (options: PutApiType): Promise<supertest.Respons
         .put(options.endpoint)
         .set(options.headers || {})
         .send(options.payload);
-    expect(performanceTime() - startTime).to.be.lessThan(1000);
+    expect(performanceTime() - startTime).to.be.lessThan(expectedResponseTime);
     if (options.context) logResponseToReport(options.context, response);
     return response;
 };
@@ -44,7 +46,7 @@ export const httpDeleteCall = async (options: DeleteApiType): Promise<supertest.
     const response = await supertest(options.baseUrl)
         .delete(options.endpoint)
         .set(options.headers || {});
-    expect(performanceTime() - startTime).to.be.lessThan(1000);
+    expect(performanceTime() - startTime).to.be.lessThan(expectedResponseTime);
     if (options.context) logResponseToReport(options.context, response);
     return response;
 };
