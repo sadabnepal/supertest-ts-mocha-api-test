@@ -48,7 +48,8 @@ jobs:
     #   if: always() 
     
     - name: Test Report
-      uses: dorny/test-reporter@v1
+      uses: phoenix-actions/test-reporting@v8
+      id: test-report
       if: success() || failure()
       with:
         name: API Test Report
