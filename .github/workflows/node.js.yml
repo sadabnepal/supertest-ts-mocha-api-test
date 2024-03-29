@@ -53,7 +53,7 @@ jobs:
       with:
         name: API Test Report
         path: report/index.json
-        reporter: mocha-json
+        reporter: mochawesome-json
     
         
           
