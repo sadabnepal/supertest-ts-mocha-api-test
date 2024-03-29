@@ -52,7 +52,7 @@ jobs:
       if: success() || failure()
       with:
         name: API Test Report
-        path: report/index-*.json
+        path: report/index.json
         reporter: mocha-json
     
         
