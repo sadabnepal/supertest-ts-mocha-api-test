@@ -2,7 +2,7 @@
 Boilerplate API test framework using Mocha, SuperTest and TypeScript.
 
 #### Pre-requisite:
-[![NodeJs](https://img.shields.io/badge/-NodeJS-%23339933?logo=npm)](https://nodejs.org/en/download/)
+[![NodeJs](https://img.shields.io/badge/-NodeJS-white?logo=node.js)](https://nodejs.org/en/download/)
 [![VSCode](https://img.shields.io/badge/-Visual%20Studio%20Code-%233178C6?logo=visual-studio-code)](https://code.visualstudio.com/download)
 
 #### Getting Started:
@@ -29,11 +29,12 @@ Setup user token
 Run tests
 ```bash
 npm test
+npm run test:rp [ to capture test results in report portal ]
 ```
 
 Report Path:
 ```bash
-path: <PROJECT_FOLDER>/report/index_yyyy\'T\'HH-MM-ss.html
+path: <PROJECT_FOLDER>/report/index.html
 ```
 
 Docker Run:
@@ -45,6 +46,19 @@ docker run node-api-image:latest [ to run test inside docker ]
 
 Run in Github Actions
 > Currently test is setup to execute in github action on push event. You need to [create github secrete]((https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)) for `GO_RES_USER_TOKEN` with value generated in `Setup user token` step.
+
+### Report Portal Integration
+- Setup: follow https://reportportal.io/installation
+- Login: Open http://localhost:8080/ and login with time user `superadmin` and password `erebus`
+- Generate API key:
+    - Click on bottom left of logged in user --> click on `Profile`
+    - Click on `API KEYS` --> `Generate API Key` --> copy the generated key
+    - Create `.env` file in root project folder. Refer `.env.example` file
+    - Paste your API key into `.env` file as `REPORT_PORTAL_KEY=<your api key>`
+- Enter `REPORT_PORTAL_PROJECT=<project_assignment>` into `.env`. Value can be found on `PROJECT ASSIGNMENT` tab of user profile
+- Other details are updated in `reportPortal.js` file
+
+![docker_run](./images/reportPortal.png)
 
 #### Features:
     - Supertest library
@@ -61,6 +75,7 @@ Run in Github Actions
     - Husky for auto lint check before code commit
     - Manage secretes using dotenv library
     - Runtime dynamic test data generation using faker js library
+    - AI powered Report Portal integration
 
 #### Tech stacks:
 [![SuperTest](https://img.shields.io/badge/-SuperTest-07BA82?logoColor=white)](https://github.com/visionmedia/supertest)

@@ -33,6 +33,7 @@
     },
     "include": [
         ".eslintrc.js",
-        "src/**/*.ts"
+        "src/**/*.ts",
+        ".mocha.rp.js"
     ]
 }

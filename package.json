@@ -1,10 +1,11 @@
 {
   "name": "api_test_framework_using_supertest_typescript",
   "version": "1.0.0",
-  "description": "",
+  "description": "testing rest api using supertest and typescript",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
+    "test:rp": "mocha --config .mocha.rp.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "postinstall": "husky"
@@ -19,6 +20,7 @@
   "license": "ISC",
   "devDependencies": {
     "@faker-js/faker": "^8.4.1",
+    "@reportportal/agent-js-mocha": "^5.0.4",
     "@types/chai": "^4.3.1",
     "@types/chai-json-schema": "^1.4.6",
     "@types/mocha": "^9.1.1",
