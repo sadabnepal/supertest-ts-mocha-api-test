@@ -48,7 +48,9 @@ Run in Github Actions
 > Currently test is setup to execute in github action on push event. You need to [create github secrete]((https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)) for `GO_RES_USER_TOKEN` with value generated in `Setup user token` step.
 
 ### Report Portal Integration
-- Setup: follow https://reportportal.io/installation
+- Setup: run below two command to spin up report portal instance locally with docker (read more https://reportportal.io/installation)
+    - curl -LO https://raw.githubusercontent.com/reportportal/reportportal/master/docker-compose.yml
+    - docker-compose -p reportportal up -d --force-recreate
 - Login: Open http://localhost:8080/ and login with time user `superadmin` and password `erebus`
 - Generate API key:
     - Click on bottom left of logged in user --> click on `Profile`
