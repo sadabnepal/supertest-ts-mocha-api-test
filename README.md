@@ -45,7 +45,12 @@ docker run node-api-image:latest [ to run test inside docker ]
 ```
 
 Run in Github Actions
-> Currently test is setup to execute in github action on push event. You need to [create github secrete]((https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository)) for `GO_RES_USER_TOKEN` with value generated in `Setup user token` step.
+> Currently test is setup to execute in github action on push event. You need to [create github secrete](https://docs.github.com/en/actions/security-guides/using-secrets-in-github-actions#creating-secrets-for-a-repository) for `GO_RES_USER_TOKEN` with value generated in `Setup user token` step.
+
+<b> Github Permission to update report: </b> Go to Repository -> Settings -> Actions -> General <br>
+Scroll to bottom of the page and look for 'Workflow permissions' section <br>
+Check 'Read and write permission' and click on save
+
 
 ### Report Portal Integration
 - Setup: run below two command to spin up report portal instance locally with docker (read more https://reportportal.io/installation)
